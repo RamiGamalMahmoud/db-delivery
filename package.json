@@ -1,0 +1,22 @@
+{
+  "name": "db-delivery",
+  "version": "0.1.0",
+  "description": "Micro node module for working with sqlite and mysql.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "db-delivery",
+    "sqlite",
+    "sqlite3",
+    "mysql",
+    "query-builder"
+  ],
+  "author": "rami-gamal",
+  "license": "MIT",
+  "dependencies": {
+    "sqlite": "^4.0.14",
+    "sqlite3": "^5.0.0"
+  }
+}
