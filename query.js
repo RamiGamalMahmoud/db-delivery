@@ -15,13 +15,8 @@ class Query {
   }
 
   where(column, operator, criteria) {
-    if (operator === 'like') {
-      operator = 'LIKE';
-    }
-    this.query += `WHERE ${column} ${operator} ? `;
-    let col = '$' + column;
-    let val = '%' + criteria + '%';
-    this.params.push(val);
+    this.query += `WHERE ${column} ${operator.toUpperCase()} ? `;
+    this.params.push(criteria);
     return this;
   }
 
