@@ -14,6 +14,22 @@ class Query {
     return this;
   }
 
+  insertInto(table, columns) {
+    this.query = `INSERT INTO ${table}(${columns.join(', ')}) `;
+    return this;
+  }
+
+  values(vals) {
+    this.query += `VALUES (`;
+    vals.forEach(val => {
+      this.query += '?, ';
+      this.params.push(val);
+    });
+    this.query = this.query.substring(0, this.query.length - 2);
+    this.query += ') '
+    return this;
+  }
+
   where(column, operator, criteria) {
     this.query += `WHERE ${column} ${operator.toUpperCase()} ? `;
     this.params.push(criteria);
