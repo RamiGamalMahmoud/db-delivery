@@ -16,7 +16,7 @@ class SqliteConnection {
     }
   }
 
-  get(sql, params = []){
+  getAll(sql, params = []) {
     return new Promise((resolve, reject) => {
       this.conn.all(sql, params, (err, row) => {
         if (err) {
