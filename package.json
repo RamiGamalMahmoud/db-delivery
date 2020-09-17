@@ -1,11 +1,9 @@
 {
   "name": "db-delivery",
-  "version": "0.1.0",
+  "version": "0.6.2",
   "description": "Micro node module for working with sqlite and mysql.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [
     "db-delivery",
     "sqlite",
