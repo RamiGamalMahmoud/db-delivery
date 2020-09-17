@@ -1,6 +1,3 @@
-
-let conn = Symbol();
-
 class DB {
 
   Connect(driver, params) {

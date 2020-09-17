@@ -1,8 +1,5 @@
 const fs = require('fs');
-const { resolve } = require('path');
 const sqlite = require('sqlite3').verbose();
-let conn = Symbol();
-
 
 class SqliteConnection {
   constructor(dbPath) {
