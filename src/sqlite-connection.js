@@ -50,6 +50,18 @@ class SqliteConnection {
     });
   }
 
+  deleteRecord(sql, params) {
+    return new Promise((resolve, reject) => {
+      this.conn.run(sql, params, function (err) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(this.changes);
+        }
+      });
+    });
+  }
+
   beginTransaction() {
     this.conn.run('BEGIN TRANSACTION;');
   }
