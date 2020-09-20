@@ -1,6 +1,6 @@
 {
   "name": "db-delivery",
-  "version": "0.6.3",
+  "version": "0.7.4",
   "description": "Micro node module for working with sqlite and mysql.",
   "main": "index.js",
   "scripts": {},
