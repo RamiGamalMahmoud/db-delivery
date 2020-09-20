@@ -3,6 +3,16 @@
 
 db-delivery is a node.js library for dealing with sqlite and mysql .
 
+---------------------------------------------------------------------------------------------
+
+## The package repo on github is [here](https://github.com/RamiGamalMahmoud/db-delivery.git)
+
+---------------------------------------------------------------------------------------------
+
+## The package on npm is [here](https://www.npmjs.com/package/db-delivery)
+
+---------------------------------------------------------------------------------------------
+
 ## It's consists of :
 ---------------------
 
