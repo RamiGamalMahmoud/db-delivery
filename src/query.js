@@ -5,12 +5,17 @@ class Query {
   }
 
   select(columns) {
-    this.query = `SELECT ${columns} FROM `;
+    this.query = `SELECT ${columns} `;
+    return this;
+  }
+
+  delete() {
+    this.query = 'DELETE ';
     return this;
   }
 
   from(table) {
-    this.query += `${table} `;
+    this.query += `FROM ${table} `;
     return this;
   }
 

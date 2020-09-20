@@ -1,8 +1,5 @@
 const fs = require('fs');
-const { resolve } = require('path');
 const sqlite = require('sqlite3').verbose();
-let conn = Symbol();
-
 
 class SqliteConnection {
   constructor(dbPath) {
@@ -42,6 +39,18 @@ class SqliteConnection {
   }
 
   insert(sql, params) {
+    return new Promise((resolve, reject) => {
+      this.conn.run(sql, params, function (err) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(this.changes);
+        }
+      });
+    });
+  }
+
+  deleteRecord(sql, params) {
     return new Promise((resolve, reject) => {
       this.conn.run(sql, params, function (err) {
         if (err) {
