@@ -71,6 +71,18 @@ class SqliteConnection {
     if (callback !== null)
       callback();
   }
+
+  updateRecord(sql, params) {
+    return new Promise((resolve, reject) => {
+      this.conn.run(sql, params, function (err) {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(this.changes);
+        }
+      })
+    });
+  }
 }
 
 module.exports = SqliteConnection;
