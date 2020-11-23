@@ -25,6 +25,7 @@ class Query {
   }
 
   values(vals) {
+    if (!Array.isArray(vals)) throw new Error('Expected an Array object as a parameter not ' + typeof vals);
     this.query += `VALUES (`;
     vals.forEach(val => {
       this.query += '?, ';
@@ -32,6 +33,27 @@ class Query {
     });
     this.query = this.query.substring(0, this.query.length - 2);
     this.query += ') '
+    return this;
+  }
+
+  update(table) {
+    this.query = `UPDATE ${table} `;
+    return this;
+  }
+
+  set(columns, values) {
+    if (!Array.isArray(columns) || !Array.isArray(values)) {
+      throw new Error(`Type error Expected two parameters of arrays found ${typeof columns} and ${typeof values}`);
+    }
+    this.query += 'SET ';
+    for (let i = 0; i < columns.length; i++) {
+      this.query += `${columns[i]}=?`;
+      this.params.push(values[i]);
+      if (i < columns.length - 1) {
+        this.query += ', ';
+      }
+      this.query += ' ';
+    }
     return this;
   }
 
@@ -82,8 +104,16 @@ class Query {
     return this;
   }
 
-  orderBy(column) {
+  orderBy(column, type = null) {
     this.query += `ORDER BY ${column}`;
+    switch (type) {
+      case 'a':
+        this.query += ` ASC`;
+        break;
+      case 'd':
+        this.query += ` DESC`;
+        break;
+    }
     return this;
   }
 
