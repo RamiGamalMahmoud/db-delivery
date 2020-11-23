@@ -1,6 +1,6 @@
 {
   "name": "db-delivery",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Micro node module for working with sqlite and mysql.",
   "main": "index.js",
   "scripts": {},
@@ -14,10 +14,11 @@
   "author": "rami-gamal",
   "license": "MIT",
   "dependencies": {
-    "sqlite": "^4.0.14",
+    "mysql": "^2.18.1",
+    "sqlite": "^4.0.17",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
-    "jest": "^26.4.2"
+    "jest": "^26.6.3"
   }
 }
