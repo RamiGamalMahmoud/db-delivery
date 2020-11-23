@@ -15,7 +15,12 @@ class DB {
   }
 
   // ToDo implement the mysql connection method
-  createMysqlConnection(params) { }
+  createMysqlConnection(options) {
+    // console.log(options);
+    let MysqlConnection = require('./mysql-conection');
+    return new MysqlConnection(options);
+
+  }
 }
 
 const db = new DB();
